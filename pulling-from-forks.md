@@ -13,8 +13,8 @@ If you are unsure which remotes you've already added, you can always check with 
 
 ```
 $ git remote -v
-origin	https://github.com/<username>/<repo-name> (fetch)
-origin	https://github.com/<username>/<repo-name> (push)
+origin	https://github.com/20jasper/git-tutorial (fetch)
+origin	https://github.com/20jasper/git-tutorial (push)
 ```
 
 #### Adding new remotes
