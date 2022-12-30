@@ -1,5 +1,6 @@
 # Pulling changes from forked repositories
 - [Pulling changes from forked repositories](#pulling-changes-from-forked-repositories)
+	- [Intro](#intro)
 	- [Remotes](#remotes)
 		- [Checking remotes](#checking-remotes)
 		- [Adding new remotes](#adding-new-remotes)
@@ -7,6 +8,7 @@
 	- [Merging changes](#merging-changes)
 	- [Conclusion](#conclusion)
 
+## Intro
 Imagine this—you are working on a feature in an open–source GitHub repo with a few others. You don't have write access, so you will need to make forks. If everyone is comfortable, one person can make a fork and give everyone else write access, but that's not always the easy to coordinate. 
 
 ## Remotes
