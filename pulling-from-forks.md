@@ -49,3 +49,15 @@ Unpacking objects: 100% (3/3), 639 bytes | 106.00 KiB/s, done.
 From https://github.com/jimothy/git-tutorial
  * [new branch]      main       -> jimothy/main
 ```
+
+### Merging changes
+At this point, both versions can be merged.
+
+```
+$ git merge jimothy/main
+Updating 875fc67..b7568a9
+```
+
+## Conclusion
+
+Congratulations You have successfully combined both your work and your teammate's!
