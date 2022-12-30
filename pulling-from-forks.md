@@ -34,3 +34,18 @@ jimothy	https://github.com/jimothy/git-tutorial (push)
 origin	https://github.com/20jasper/git-tutorial (fetch)
 origin	https://github.com/20jasper/git-tutorial (push)
 ```
+
+Great—everything worked! Now you just need to fetch and merge the changes and you're set.
+
+### Fetching changes
+To sync the changes made in a remote, run `git fetch <remote>`
+
+```
+$ git fetch jimothy
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 639 bytes | 106.00 KiB/s, done.
+From https://github.com/jimothy/git-tutorial
+ * [new branch]      main       -> jimothy/main
+```
