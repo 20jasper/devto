@@ -1,4 +1,12 @@
 # Pulling changes from forked repositories
+- [Pulling changes from forked repositories](#pulling-changes-from-forked-repositories)
+	- [Why use multiple forks?](#why-use-multiple-forks)
+		- [Remotes](#remotes)
+			- [Checking remotes](#checking-remotes)
+			- [Adding new remotes](#adding-new-remotes)
+		- [Fetching changes](#fetching-changes)
+		- [Merging changes](#merging-changes)
+	- [Conclusion](#conclusion)
 
 ## Why use multiple forks? 
 Imagine this—you are working on a feature in an open–source GitHub repo with a few others. You don't have write access, so you will need to make forks. If everyone is comfortable, one person can make a fork and give everyone else write access, but that's not always the easy to coordinate. 
