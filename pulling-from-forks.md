@@ -3,7 +3,7 @@
 ## Why use multiple forks? 
 Imagine this—you are working on a feature in an open–source GitHub repo with a few others. You don't have write access, so you will need to make forks. If everyone is comfortable, one person can make a fork and give everyone else write access, but that's not always the easy to coordinate. 
 
-### Setting up a remote
+### Remotes
 Your teammate just pushed some changes, how can you pull them into your own fork?
 
 First we need to set up a remote repository, or for short, a remote. This will allow you to interact with other repositories—in this case, your teammates'. 
@@ -17,6 +17,7 @@ origin	https://github.com/<username>/<repo-name> (fetch)
 origin	https://github.com/<username>/<repo-name> (push)
 ```
 
+#### Adding new remotes
 ```git
 $ git remote add 
 ```
