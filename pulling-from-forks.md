@@ -25,3 +25,12 @@ Let's say our teammate is called Jimothy, and to keep it simple, let's use `jimo
 ```git
 $ git remote add jimothy https://github.com/jimothy/git-tutorial
 ```
+
+Just to be safe, let's check the remotes.
+```
+$ git remote -v
+jimothy	https://github.com/jimothy/git-tutorial (fetch)
+jimothy	https://github.com/jimothy/git-tutorial (push)
+origin	https://github.com/20jasper/git-tutorial (fetch)
+origin	https://github.com/20jasper/git-tutorial (push)
+```
