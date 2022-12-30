@@ -16,8 +16,12 @@ $ git remote -v
 origin	https://github.com/20jasper/git-tutorial (fetch)
 origin	https://github.com/20jasper/git-tutorial (push)
 ```
-
+Note that origin isn't a special keyword—it's just the default name for a repo's main remote
 #### Adding new remotes
+Typing out the whole url for a remote every time would be confusing, but luckily, each remote can be given a name just like `origin`. 
+
+Let's say our teammate is called Jimothy, and to keep it simple, let's use `jimothy` for the name of the remote as well.
+
 ```git
-$ git remote add 
+$ git remote add jimothy https://github.com/jimothy/git-tutorial
 ```
