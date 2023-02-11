@@ -2,6 +2,7 @@
 
 - [Variables in Rust - Rust for TypeScript Developers](#variables-in-rust---rust-for-typescript-developers)
 	- [Naming](#naming)
+	- [Scope](#scope)
 	- [Initialization](#initialization)
 	- [Declaration](#declaration)
 	- [Redeclaration](#redeclaration)
@@ -19,6 +20,20 @@ Note that variables defined with `const` must be explicitly typed
 
 <br>
 
+## Scope
+
+In Rust, variables are block scoped just like variables declared with `let` and `const` in TypeScript
+
+```rust
+fn main() {
+  let x = 32;
+  {
+    let x = 12;
+    println!("{x}") // 12
+  }
+  println!("{x}") // 32
+}
+```
 ## Initialization
 In TypeScript, the initialization of variables declared with `var` is hoisted
 
@@ -44,7 +59,7 @@ let x;
 console.log(x) // undefined
 ```
 
-Rust takes the more modern behavior of `let` and `const` and takes it one step further. Variables are not initialized unless they are assigned a value
+Rust takes the more modern behavior of `let` and `const` and takes it one step further. Variables are not assigned a value if not given an initializer
 
 This works
 ```rust
@@ -253,3 +268,4 @@ error[E0596]: cannot borrow `vec` as mutable, as it is not declared as mutable
 5 |   vec.push(1);
   |   ^^^^^^^^^^^ cannot borrow as mutable
 ```
+
