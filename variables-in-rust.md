@@ -10,7 +10,7 @@
 	- [Mutability](#mutability)
 
 ## Naming
-In Rust, variables are snake cased, while constants are in screaming snake case
+In Rust, variables are snake cased, while constants are conventially in screaming snake case
 ```rust
 const CONSTANT_VALUE: i32 = 2;
 let non_constant_value = 32;
@@ -171,7 +171,7 @@ error[E0428]: the name `X` is defined multiple times
   = note: `X` must be defined only once in the value namespace of this block
 ```
 
-However, Rust's `let` works like `var` here—it can be redeclared in the same namespace 
+Rust's `let` works like `var` here—it can be redeclared in the same namespace 
 
 ```rust
 fn main() {
@@ -182,6 +182,30 @@ fn main() {
   println!("{x}"); // 43
 }
 ```
+
+However, variables declared with `let` can be redeclared with a different type!
+
+```rust
+fn main() {
+  let x = 32;
+  println!("{x}");
+  
+  let x = "hi";
+  println!("{x}");
+}
+```
+
+While in TypeScript, variable declarations can't change type
+
+```ts
+var x = 1
+var x = 'hi'
+```
+```
+Subsequent variable declarations must have the same type.
+Variable 'x' must be of type 'number', but here has type 'string'.
+```
+
 <br>
 
 ## Reassignment
@@ -268,4 +292,3 @@ error[E0596]: cannot borrow `vec` as mutable, as it is not declared as mutable
 5 |   vec.push(1);
   |   ^^^^^^^^^^^ cannot borrow as mutable
 ```
-
