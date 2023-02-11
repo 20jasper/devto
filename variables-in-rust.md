@@ -2,14 +2,13 @@
 
 - [Variables in Rust - Rust for TypeScript Developers](#variables-in-rust---rust-for-typescript-developers)
 	- [Initialization](#initialization)
-	- [Scope](#scope)
-	- [Reassignment](#reassignment)
+	- [Declaration](#declaration)
 	- [Redeclaration](#redeclaration)
+	- [Reassignment](#reassignment)
 	- [Mutability](#mutability)
-	- [Hoisting](#hoisting)
 
 ## Initialization
-In TypeScript, the initialization of variables declared with var is hoisted
+In TypeScript, the initialization of variables declared with `var` is hoisted
 
 ```ts
 console.log(x); // undefined
@@ -17,7 +16,7 @@ var x = 12;
 console.log(x); // 12
 ```
 
-The initialization of variables declared with let or const is not hoisted
+The initialization of variables declared with `let` or `const` is not hoisted
 
 ```ts
 console.log(x);
@@ -33,7 +32,7 @@ let x;
 console.log(x) // undefined
 ```
 
-Rust takes the more modern behavior of let and const and takes it one step further. Variables are not initialized unless they are assigned a value
+Rust takes the more modern behavior of `let` and `const` and takes it one step further. Variables are not initialized unless they are assigned a value
 
 This works
 ```rust
@@ -46,9 +45,9 @@ fn main() {
 This does not
 ```rust
 fn main() {
-    let x: i32;
+  let x: i32;
     
-    println!("{x}");
+  println!("{x}");
 }
 ```
 ```
@@ -62,9 +61,10 @@ error[E0381]: used binding `x` isn't initialized
   |                ^ `x` used here but it isn't initialized
 ```
 
+## Declaration
+Variables declared with `const` in Rust can be global, but variables declared with `let` cannot
 
-## Scope
-Variables declared with const in rust can be global, but variables declared with let cannot
+Note that variables defined with `const` must be explicitly typed
 
 So this works,
 ```rust
@@ -92,22 +92,71 @@ error: expected item, found keyword `let`
   | ^^^ consider using `const` or `static` instead of `let` for global variables
 ```
 
-In TypeScript, variables can be declared anywhere as long a
+In TypeScript, variables declared with `var`, `let`, or `const` can be declared anywhere and aren't required to be explicitly typed
 
 ```ts
 let x = 12;
-const Y = 12;
 ```
 
+## Redeclaration
+In TypeScript, variables assigned with `var` can be redeclared locally
+
+```ts
+var x = 12;
+console.log(x); // 12
+
+var x = 32;
+console.log(x); // 32
+```
+
+Variables declared with `let` or `const` cannot be redeclared locally
+
+```ts
+const x = 12;
+console.log(x);
+
+const x = 32;
+console.log(x);
+```
+
+```
+Cannot redeclare block-scoped variable 'x'.
+```
+
+Rust's `const` works the same as TypeScript's in this sense
+
+```rust
+fn main() {
+  const X: i32 = 12;
+  const X: i32 = 12;
+}
+```
+```
+error[E0428]: the name `X` is defined multiple times
+ --> src/main.rs:5:3
+  |
+4 |   const X: i32 = 12;
+  |   ------------------ previous definition of the value `X` here
+5 |   const X: i32 = 12;
+  |   ^^^^^^^^^^^^^^^^^^ `X` redefined here
+  |
+  = note: `X` must be defined only once in the value namespace of this block
+```
+
+However, Rust's `let` works like `var` here—it can be redeclared in the same namespace 
+
+```rust
+fn main() {
+  let x = 12;
+  println!("{x}"); // 12
+  
+  let x = 43;
+  println!("{x}"); // 43
+}
+```
 ## Reassignment
 let mut allows in rust
 js let/var allows
-## Redeclaration
-let in rust
-var in js
 ## Mutability
 rust everything is immutable without mut
 it's by type in js
-
-
-## Hoisting
