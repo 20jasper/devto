@@ -1,11 +1,23 @@
 # Variables in Rust - Rust for TypeScript Developers
 
 - [Variables in Rust - Rust for TypeScript Developers](#variables-in-rust---rust-for-typescript-developers)
+	- [Naming](#naming)
 	- [Initialization](#initialization)
 	- [Declaration](#declaration)
 	- [Redeclaration](#redeclaration)
 	- [Reassignment](#reassignment)
 	- [Mutability](#mutability)
+
+## Naming
+In Rust, variables are snake cased, while constants are in screaming snake case
+```rust
+const CONSTANT_VALUE: i32 = 2;
+let non_constant_value = 32;
+```
+
+Note that variables defined with `const` must be explicitly typed
+
+<br>
 
 ## Initialization
 In TypeScript, the initialization of variables declared with `var` is hoisted
@@ -60,10 +72,10 @@ error[E0381]: used binding `x` isn't initialized
   |                ^ `x` used here but it isn't initialized
 ```
 
+<br>
+
 ## Declaration
 Variables declared with `const` in Rust can be global, but variables declared with `let` cannot
-
-Note that variables defined with `const` must be explicitly typed
 
 So this works,
 ```rust
@@ -96,6 +108,8 @@ In TypeScript, variables declared with `var`, `let`, or `const` can be declared 
 ```ts
 let x = 12;
 ```
+
+<br>
 
 ## Redeclaration
 In TypeScript, variables assigned with `var` can be redeclared locally
@@ -153,6 +167,8 @@ fn main() {
   println!("{x}"); // 43
 }
 ```
+<br>
+
 ## Reassignment
 In TypeScript, variables declared with `const` cannot be reassigned
 
@@ -196,6 +212,8 @@ error[E0384]: cannot assign twice to immutable variable `x`
 6 |   x = 23;
   |   ^^^^^^ cannot assign twice to immutable variable
 ```
+
+<br>
 
 ## Mutability
 
