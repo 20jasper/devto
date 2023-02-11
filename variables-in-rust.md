@@ -8,6 +8,7 @@
 	- [Redeclaration](#redeclaration)
 	- [Reassignment](#reassignment)
 	- [Mutability](#mutability)
+	- [Outro](#outro)
 
 ## Naming
 In Rust, variables are snake cased, while constants are conventially in screaming snake case
@@ -292,3 +293,7 @@ error[E0596]: cannot borrow `vec` as mutable, as it is not declared as mutable
 5 |   vec.push(1);
   |   ^^^^^^^^^^^ cannot borrow as mutable
 ```
+
+## Outro
+
+Thank you for reading! Please let me know if you have any suggestions.
