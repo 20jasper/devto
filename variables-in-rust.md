@@ -25,7 +25,7 @@ let x = 12;
 ```
 Uncaught ReferenceError: can't access lexical declaration 'x' before initialization
 ```
-However, they are initialized with their declaration even if they aren't assigned a value
+However, they are assigned undefined if not given an initializer
 
 ```ts
 let x;
@@ -155,6 +155,9 @@ fn main() {
 }
 ```
 ## Reassignment
+In TypeScript, variables declared with const
+
+
 let mut allows in rust
 js let/var allows
 ## Mutability
